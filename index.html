@@ -89,7 +89,8 @@ document.getElementById('navFavorites').addEventListener('click',()=>{document.g
 cards.addEventListener('click',e=>{const b=e.target.closest('[data-cart]');if(b){e.stopImmediatePropagation();add(b.dataset.cart)}},true);
 lines.addEventListener('click',e=>{const b=e.target.closest('[data-plus],[data-minus],[data-remove]');if(!b)return;const id=b.dataset.plus||b.dataset.minus||b.dataset.remove;if(b.hasAttribute('data-plus'))quantities[id]=Math.min(99,(quantities[id]||0)+1);else if(b.hasAttribute('data-minus'))quantities[id]=Math.max(0,(quantities[id]||0)-1);else quantities[id]=0;sync()});
 const addDetail=document.createElement('button');addDetail.type='button';addDetail.className='secondary cart-add';addDetail.textContent='+ ДОБАВИТЬ В КОРЗИНУ';document.querySelector('.detailcontent .actions').appendChild(addDetail);
-addDetail.addEventListener('click',()=>{if(selected)add(selecdocument.getElementById('basketCopy').addEventListener('click',async()=>{
+addDetail.addEventListener('click',()=>{if(selected)add(selected.id)});
+document.getElementById('basketCopy').addEventListener('click',async()=>{
 const items=products.filter(p=>quantities[p.id]>0);if(!items.length)return;
 const d=document.getElementById('basketDelivery').value;
 const button=document.getElementById('basketCopy');
