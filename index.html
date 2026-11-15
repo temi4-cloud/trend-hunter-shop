@@ -106,7 +106,7 @@ if(!/^[a-f0-9]{32}$/.test(result.code||''))throw new Error('Invalid order code')
 window.location.assign('https://t.me/TrendHunterShopBot?start=cart_'+result.code);
 }catch(error){
 console.error('TREND HUNTER checkout:',error);
-const message='TREND HUNTER — ОБЩИЙ ЗАКАЗ\\n'+items.map((p,i)=>(i+1)+'. '+p.id+' — '+p.ruTitle+' × '+quantities[p.id]+' шт. (размер уточнить)').join('\\n')+'\\nДоставка: '+deliveryNames[d]+'\\nПожалуйста, подтвердите наличие, размеры и итоговую цену с доставкой.';
+const message='TREND HUNTER — ОБЩИЙ ЗАКАЗ\n'+items.map((p,i)=>(i+1)+'. '+p.id+' — '+p.ruTitle+' × '+quantities[p.id]+' шт. (размер уточнить)').join('\n')+'\nДоставка: '+deliveryNames[d]+'\nПожалуйста, подтвердите наличие, размеры и итоговую цену с доставкой.';
 let copied=false;
 try{await navigator.clipboard.writeText(message);copied=true}catch{
 const ta=document.createElement('textarea');ta.value=message;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{copied=document.execCommand('copy')}catch{}ta.remove();
