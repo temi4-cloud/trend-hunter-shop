@@ -1,0 +1,137 @@
+[
+  {
+    "id": "TH-001",
+    "ruTitle": "Градиентный свитер",
+    "title": "Gradient Knit Sweater",
+    "description": "Свитер с переходом от оранжевого к жёлтому, контрастной резинкой и нашивкой на рукаве.",
+    "category": "Трикотаж",
+    "img": "th-001.jpg",
+    "index": 0
+  },
+  {
+    "id": "TH-002",
+    "ruTitle": "Широкие джинсы с синим пламенем",
+    "title": "Blue Flame Wide Jeans",
+    "description": "Чёрные широкие джинсы с контрастной строчкой и синим пламенем на заднем кармане.",
+    "category": "Джинсы",
+    "img": "th-002.jpg",
+    "index": 1
+  },
+  {
+    "id": "TH-003",
+    "ruTitle": "Чёрные джинсы с контрастной строчкой",
+    "title": "Contrast Utility Denim",
+    "description": "Чёрная джинсовая модель с крупными накладными карманами и красным графическим акцентом.",
+    "category": "Джинсы",
+    "img": "th-003.jpg",
+    "index": 2
+  },
+  {
+    "id": "TH-004",
+    "ruTitle": "Широкие джинсы с эффектом потертости",
+    "title": "Baggy Washed Jeans",
+    "description": "Очень широкие джинсы с эффектом выцветшего синего денима.",
+    "category": "Джинсы",
+    "img": "th-004.jpg",
+    "index": 3
+  },
+  {
+    "id": "TH-005",
+    "ruTitle": "Чёрные джинсы с костями",
+    "title": "Dice Black Wide Jeans",
+    "description": "Чёрные широкие джинсы с принтом игральных костей на заднем кармане.",
+    "category": "Джинсы",
+    "img": "th-005.jpg",
+    "index": 4
+  },
+  {
+    "id": "TH-006",
+    "ruTitle": "Синие джинсы с костями",
+    "title": "Dice Blue Wide Jeans",
+    "description": "Синяя версия широких джинсов с принтом игральных костей.",
+    "category": "Джинсы",
+    "img": "th-006.jpg",
+    "index": 5
+  },
+  {
+    "id": "TH-007",
+    "ruTitle": "Тёмные джинсы Tribal",
+    "title": "Tribal Washed Jeans",
+    "description": "Тёмный потёртый деним с декоративными tribal-орнаментами.",
+    "category": "Джинсы",
+    "img": "th-007.jpg",
+    "index": 6
+  },
+  {
+    "id": "TH-008",
+    "ruTitle": "Синие джинсы Tribal",
+    "title": "Tribal Blue Jeans",
+    "description": "Синий деним широкого кроя с орнаментом в стиле tribal.",
+    "category": "Джинсы",
+    "img": "th-008.jpg",
+    "index": 7
+  },
+  {
+    "id": "TH-009",
+    "ruTitle": "Джинсы с черепами",
+    "title": "Skull Washed Jeans",
+    "description": "Тёмно-серые широкие джинсы с рисунком трёх черепов сзади.",
+    "category": "Джинсы",
+    "img": "th-009.jpg",
+    "index": 8
+  },
+  {
+    "id": "TH-010",
+    "ruTitle": "Широкие джинсы Graffiti",
+    "title": "Graffiti Wide Jeans",
+    "description": "Чёрные широкие джинсы с контрастной строчкой и красным граффити на кармане.",
+    "category": "Джинсы",
+    "img": "th-010.jpg",
+    "index": 9
+  },
+  {
+    "id": "TH-011",
+    "ruTitle": "Джинсы Dragon & Tiger",
+    "title": "Dragon & Tiger Jeans",
+    "description": "Чёрные джинсы с принтами дракона и тигра, контрастной строчкой.",
+    "category": "Джинсы",
+    "img": "th-011.jpg",
+    "index": 10
+  },
+  {
+    "id": "TH-012",
+    "ruTitle": "Джинсы с восточным принтом",
+    "title": "Eastern Art Denim",
+    "description": "Чёрные джинсы с насыщенной многоцветной графикой в восточной тематике на нижней части штанин.",
+    "category": "Джинсы",
+    "img": "th-012.jpg",
+    "index": 11
+  },
+  {
+    "id": "TH-013",
+    "ruTitle": "Джинсы Red Dragon",
+    "title": "Red Dragon Jeans",
+    "description": "Чёрные джинсы с крупным красным драконом на передней и задней части.",
+    "category": "Джинсы",
+    "img": "th-013.jpg",
+    "index": 12
+  },
+  {
+    "id": "TH-014",
+    "ruTitle": "Джинсы с аниме-принтом",
+    "title": "Anime Graphic Jeans",
+    "description": "Тёмные джинсы с крупным иллюстративным принтом персонажа и красными акцентами сзади.",
+    "category": "Джинсы",
+    "img": "th-014.jpg",
+    "index": 13
+  },
+  {
+    "id": "TH-015",
+    "ruTitle": "Джинсы с графическим принтом",
+    "title": "Abstract Graffiti Jeans",
+    "description": "Чёрные джинсы с геометрическими красно-белыми рисунками на задних карманах.",
+    "category": "Джинсы",
+    "img": "th-015.jpg",
+    "index": 14
+  }
+]
