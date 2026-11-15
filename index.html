@@ -19,6 +19,36 @@
 .heart{position:absolute;top:9px;right:9px;z-index:2;border:1px solid #777;background:#111e;color:white;border-radius:50%;width:38px;height:38px;font-size:23px}.heart[aria-pressed=true]{color:var(--lime);border-color:var(--lime)}.tile{border-radius:12px;overflow:hidden}.saved-nav{font-size:12px;font-weight:900;color:var(--lime);border:1px solid #666;padding:10px;border-radius:8px}.saved-panel{border:1px solid #605521;background:#1d1b10;padding:16px;margin-bottom:20px;border-radius:12px}.saved-panel[hidden]{display:none}.saved-panel button{background:#2b2b2b;color:white;border:1px solid #777;padding:9px;margin:4px;border-radius:6px}.hero{background:radial-gradient(ellipse at 80% 0%,#3b330f,transparent 50%)}@media(max-width:700px){.saved-nav{padding:8px;font-size:10px}.heart{width:34px;height:34px;font-size:20px}} 
 /* TREND HUNTER 4.1 — shopping cart */
 body{padding-bottom:72px}.cart-nav{position:fixed;bottom:0;left:0;right:0;z-index:25;background:#111214f5;border-top:1px solid #454545;display:flex;justify-content:space-around;padding:8px 8px calc(8px + env(safe-area-inset-bottom))}.cart-nav button,.cart-nav a{background:transparent;color:#eee;border:0;font-size:12px;font-weight:800;padding:8px;display:flex;flex-direction:column;align-items:center;gap:3px}.cart-nav .nav-icon{font-size:22px}.cart-nav .on{color:var(--lime)}.cart-shade{position:fixed;inset:0;background:#000b;z-index:60;display:none}.cart-shade.open{display:block}.cart-drawer{position:absolute;right:0;top:0;bottom:0;width:min(100%,480px);background:#151617;border-left:1px solid #555;overflow:auto;padding:22px 18px calc(32px + env(safe-area-inset-bottom))}.cart-drawer h2{font-size:29px;margin:8px 0 12px}.cart-line{display:grid;grid-template-columns:74px 1fr;gap:12px;border-bottom:1px solid #383838;padding:14px 0}.cart-line img{width:74px;height:94px;object-fit:contain;background:#292929;border-radius:6px}.cart-line strong{font-size:14px}.cart-line select,.cart-delivery{background:#262626;border:1px solid #777;color:#fff;padding:9px;border-radius:5px;max-width:100%}.cart-controls{display:flex;gap:9px;align-items:center;margin-top:9px}.cart-controls button{background:#303030;border:1px solid #777;color:#fff;border-radius:5px;min-width:32px;min-height:32px}.cart-controls .remove{font-size:11px;padding:0 9px}.cart-checkout{margin-top:22px;border:1px solid #655a26;background:#211e11;border-radius:9px;padding:16px}.cart-checkout p{color:#c5c5c5;font-size:12px;line-height:1.6}.cart-checkout .primary{width:100%;margin-top:12px;font-size:13px;min-height:48px}.cart-close{float:right;background:#333;color:white;border:1px solid #777;border-radius:6px;padding:8px 12px}.cart-add{width:100%;margin-top:8px}.cart-empty{color:#bbb;line-height:1.6}.cart-note{color:#bbb;font-size:12px;line-height:1.6}.cart-quantity{color:var(--lime)}@media(min-width:701px){body{padding-bottom:0}.cart-nav{max-width:410px;left:auto;right:18px;bottom:18px;border:1px solid #444;border-radius:12px;padding:8px}}
+
+/* TREND HUNTER 4.4 — visual polish only */
+:root{--line:#36383a;--panel:#151617}
+.tile{border-color:#343638;box-shadow:0 8px 26px #0003;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.tile:hover{border-color:#a58c24;box-shadow:0 14px 36px #0007}
+.tilephoto img{transition:transform .35s ease}
+.tile:hover .tilephoto img{transform:scale(1.035)}
+.tilebody h3{font-weight:850}
+.primary{transition:filter .2s ease,transform .2s ease,box-shadow .2s ease}
+.primary:hover{box-shadow:0 5px 20px #ffd90f30}
+.primary:active{transform:scale(.985)}
+.pill,.search,.secondary{transition:border-color .2s ease,background .2s ease}
+.pill:hover,.secondary:hover,.search:focus{border-color:#d8b925}
+.cart-line{border-bottom-color:#3d3d3d}
+.cart-checkout{background:linear-gradient(145deg,#28220c,#191914);border-color:#75641e}
+#basketCopy{min-height:56px;font-size:14px;letter-spacing:.04em;box-shadow:0 6px 24px #ffd90f1c}
+#basketCopy:disabled{opacity:.7;cursor:wait}
+@media(max-width:700px){
+ .tile{border-radius:14px}
+ .tilebody{padding:12px}
+ .tilebody h3{font-size:15px;line-height:1.22}
+ .act .primary,.act .secondary{min-height:44px}
+ .hero{padding-top:56px;padding-bottom:55px}
+ .hero .sub{line-height:1.7}
+ .cart-checkout{border-radius:14px}
+ .tile:hover{transform:none}
+ .tile:hover .tilephoto img{transform:none}
+}
+@media(prefers-reduced-motion:reduce){.tilephoto img,.primary,.tile{transition:none!important}}
+
 </style></head>
 <body><header class="top"><div class="wrap topin"><a href="#top" class="brand" aria-label="TREND HUNTER, главная">TREND <em>HUNTER</em></a><nav class="toplinks"><a href="#catalog">Каталог</a><a class="saved-nav" href="#saved">♡ <span id="favCount">0</span> · Подборка <span id="cartCount">0</span></a><a class="tgb" href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer">НАПИСАТЬ</a></nav></div></header>
 <div class="marquee">DROP 001 ◆ STREETWEAR / DENIM ◆ DIRECT TELEGRAM ONLY ◆ NO CALLS</div>
