@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0a0a0b"><meta name="description" content="TREND HUNTER — независимая подборка streetwear. Цена и доставка по запросу в Telegram."><title>TREND HUNTER 5.3 / PRODUCT SIZES</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0a0a0b"><meta name="description" content="TREND HUNTER — независимая подборка streetwear. Цена и доставка по запросу в Telegram."><title>TREND HUNTER 5.4 / SIZE GUIDE</title>
 <style>
 :root{--bg:#0a0a0b;--panel:#141516;--panel2:#1b1d1e;--line:#313336;--muted:#adb0b2;--fg:#f4f3ed;--lime:#FFD90F;--serif:Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--fg);margin:0;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}body.lock{overflow:hidden}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--lime);outline-offset:3px}img{max-width:100%} .wrap{max-width:1280px;margin:auto;padding-left:24px;padding-right:24px}
@@ -294,6 +294,19 @@ body{background:#0d0d0e}
 .detail-size-box p{font-size:12px;color:#aaa;margin:9px 0 0;line-height:1.5}
 .detail-size-box+.actions{margin-top:12px}
 
+
+/* TREND HUNTER 5.4 — supplier-safe size guidance */
+.size-guide-trigger{display:block;margin-top:11px;padding:6px 0;border:0;background:none;color:#e6c54d;font-size:12px;font-weight:800;letter-spacing:.5px;text-align:left;text-decoration:underline;text-underline-offset:4px}
+.size-guide-overlay[hidden]{display:none!important}
+.size-guide-overlay{position:fixed;inset:0;z-index:200;background:#000c;display:flex;align-items:center;justify-content:center;padding:18px}
+.size-guide-dialog{position:relative;width:min(100%,520px);max-height:85dvh;overflow-y:auto;background:#181818;border:1px solid #706044;border-radius:10px;padding:28px 23px;color:#f4f3ed;box-shadow:0 20px 70px #000b}
+.size-guide-close{position:absolute;right:13px;top:10px;background:none;border:0;color:#fff;font-size:29px}
+.size-guide-kicker{font-size:10px;letter-spacing:2px;color:#e6c54d;font-weight:800}
+.size-guide-dialog h3{font-size:23px;line-height:1.15;margin:14px 35px 20px 0}
+.size-guide-dialog #sizeGuideText p{font-size:14px;line-height:1.65;margin:10px 0;color:#dedbd5}
+.size-guide-note{border-top:1px solid #45413a;margin-top:18px;padding-top:15px;font-size:12px;line-height:1.6;color:#bbb5aa}
+.size-guide-done{margin-top:15px;width:100%;padding:13px;border:0;border-radius:4px;background:#e6c54d;color:#111;font-weight:900;letter-spacing:1px}
+
 </style></head>
 <body><header class="top"><div class="wrap topin"><a href="#top" class="brand" aria-label="TREND HUNTER, главная">TREND <em>HUNTER</em></a><nav class="toplinks"><a href="#catalog">Каталог</a><a class="saved-nav" href="#saved">♡ <span id="favCount">0</span> · Подборка <span id="cartCount">0</span></a><a class="tgb" href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer">НАПИСАТЬ</a></nav></div></header>
 <div class="marquee">DROP 001 ◆ STREETWEAR / DENIM ◆ DIRECT TELEGRAM ONLY ◆ NO CALLS</div>
@@ -356,6 +369,21 @@ detailSizeBox.className='detail-size-box';
 detailSizeBox.innerHTML='<label for="detailSizeSelect">ВЫБЕРИ РАЗМЕР</label><select id="detailSizeSelect" aria-label="Размер товара"></select><p>Размер и наличие подтвердим перед оплатой.</p>';
 document.querySelector('.detailcontent .actions').before(detailSizeBox);
 const detailSizeSelect=detailSizeBox.querySelector('select');
+const guideButton=document.createElement('button');
+guideButton.type='button';guideButton.className='size-guide-trigger';guideButton.textContent='↗ КАК ПОДОБРАТЬ РАЗМЕР?';
+detailSizeBox.append(guideButton);
+const guide=document.createElement('div');
+guide.className='size-guide-overlay';guide.id='sizeGuideOverlay';guide.hidden=true;
+guide.innerHTML='<div class="size-guide-dialog" role="dialog" aria-modal="true" aria-labelledby="sizeGuideHeading"><button type="button" class="size-guide-close" aria-label="Закрыть подсказку">×</button><div class="size-guide-kicker">TREND HUNTER / SIZE GUIDE</div><h3 id="sizeGuideHeading">КАК ПОДОБРАТЬ РАЗМЕР</h3><div id="sizeGuideText"></div><p class="size-guide-note">Это рекомендации по измерениям, не размерная сетка конкретного бренда. Точные замеры и наличие подтвердим у поставщика перед оплатой.</p><button type="button" class="size-guide-done">ПОНЯТНО</button></div>';
+document.body.append(guide);
+const guideText=guide.querySelector('#sizeGuideText');
+const guideClose=()=>{guide.hidden=true;guideButton.focus()};
+guideButton.addEventListener('click',()=>{if(!selected)return;const denim=/джинс|брюк|denim|jeans/i.test((selected.ruTitle||'')+' '+(selected.category||''));guideText.innerHTML=denim?'<p><b>1. Талия:</b> измерь обхват в месте, где носишь джинсы.</p><p><b>2. Бёдра:</b> измерь самую широкую часть.</p><p><b>3. Длина:</b> измерь внутренний шов от паха до низа штанины.</p><p><b>Размер W:</b> обычно обозначает обхват талии в дюймах, но посадка и фактические замеры зависят от модели.</p>':'<p><b>1. Грудь:</b> измерь обхват по самой широкой части.</p><p><b>2. Длина:</b> измерь от верхней точки плеча до нижнего края вещи.</p><p><b>3. Рукав:</b> измерь от плечевого шва до манжеты.</p><p><b>Посадка:</b> для свободного силуэта сравни замеры с вещью, которая уже хорошо сидит.</p>';guide.hidden=false;guide.querySelector('.size-guide-close').focus()});
+guide.querySelector('.size-guide-close').addEventListener('click',guideClose);
+guide.querySelector('.size-guide-done').addEventListener('click',guideClose);
+guide.addEventListener('click',e=>{if(e.target===guide)guideClose()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!guide.hidden){e.stopImmediatePropagation();guideClose()}},true);
+
 function refreshDetailSizes(){if(!selected)return;detailSizeSelect.innerHTML=sizeOptions(selected).map(v=>'<option value="'+v+'">'+(v==='Уточнить'?'Уточнить размер':v)+'</option>').join('')}
 const detailWatch=new MutationObserver(()=>{if(overlay.classList.contains('open'))refreshDetailSizes()});
 detailWatch.observe(overlay,{attributes:true,attributeFilter:['class']});
