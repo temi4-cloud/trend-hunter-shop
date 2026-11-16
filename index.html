@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0a0a0b"><meta name="description" content="TREND HUNTER — независимая подборка streetwear. Цена и доставка по запросу в Telegram."><title>TREND HUNTER / DROP 001 / 3.0</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0a0a0b"><meta name="description" content="TREND HUNTER — независимая подборка streetwear. Цена и доставка по запросу в Telegram."><title>TREND HUNTER 5.11 / BRAND STORY</title>
 <style>
 :root{--bg:#0a0a0b;--panel:#141516;--panel2:#1b1d1e;--line:#313336;--muted:#adb0b2;--fg:#f4f3ed;--lime:#FFD90F;--serif:Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--fg);margin:0;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}body.lock{overflow:hidden}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--lime);outline-offset:3px}img{max-width:100%} .wrap{max-width:1280px;margin:auto;padding-left:24px;padding-right:24px}
@@ -16,28 +16,422 @@
 .photohelp{margin-top:26px;padding:22px;border:1px solid #505b32;background:linear-gradient(135deg,#191e14,#101111);display:flex;justify-content:space-between;align-items:center;gap:14px}.photohelp h3{margin:6px 0 8px;font-size:23px;letter-spacing:-.04em}.photohelp p{margin:0;color:#bfc1be;font-size:13px;line-height:1.5;max-width:600px}.photohelp .primary{flex-shrink:0;padding:14px 18px}
 @media(max-width:700px){.tilebody{padding:10px}.tilebody h3{font-size:14px;line-height:1.2;margin:7px 0 7px}.tilephoto{aspect-ratio:4/4.65}.stamp{font-size:10px;padding:7px}.corner{font-size:9px;padding:6px}.tilebody .price{font-size:11px;margin:12px 0 9px}.act{grid-template-columns:1fr 1fr;gap:6px}.act .primary,.act .secondary{min-height:42px;padding:9px 4px;font-size:10px;line-height:1.15}.enname{font-size:11px;min-height:30px;margin:0}.photohelp{display:block;padding:17px}.photohelp h3{font-size:21px}.photohelp .primary{margin-top:14px;width:100%}.detailcontent{padding:19px}.detailcontent .actions{margin-top:17px}.detailcontent .note{margin-top:12px}.detailcontent h2{font-size:27px}.detailimage{height:min(45dvh,410px)}.tile:hover{transform:none}}
 .delivery-banner{border:1px solid var(--line);padding:28px;background:#171717;margin:45px 0}.delivery-banner h2{font-size:clamp(26px,4vw,48px);margin:12px 0 25px}.delivery-banner p{color:var(--muted);line-height:1.6}.delivery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.delivery-grid>div{border:1px solid #444;background:#202020;padding:18px;display:flex;flex-direction:column;gap:12px}.delivery-grid b{color:var(--lime);font-size:12px;letter-spacing:1.5px}.delivery-grid strong{font-size:26px}.delivery-grid span{color:#ddd;font-size:13px}.delivery-picker{margin:14px 0 18px;display:grid;gap:9px}.delivery-picker label{color:var(--lime);font-size:12px;font-weight:900;letter-spacing:2px}.delivery-picker select{width:100%;background:#222;color:#fff;border:1px solid #666;padding:15px 12px;font-size:15px;border-radius:3px}.delivery-picker small{color:var(--muted);line-height:1.5}.tile .primary,.actions .primary{background:var(--lime);color:#101010}.brand em,.hero h1 span{color:var(--lime)}@media(max-width:600px){.delivery-grid{grid-template-columns:1fr}.delivery-banner{padding:20px;margin:24px 0}.delivery-grid>div{gap:7px}.delivery-grid strong{font-size:22px}}
+.heart{position:absolute;top:9px;right:9px;z-index:2;border:1px solid #777;background:#111e;color:white;border-radius:50%;width:38px;height:38px;font-size:23px}.heart[aria-pressed=true]{color:var(--lime);border-color:var(--lime)}.tile{border-radius:12px;overflow:hidden}.saved-nav{font-size:12px;font-weight:900;color:var(--lime);border:1px solid #666;padding:10px;border-radius:8px}.saved-panel{border:1px solid #605521;background:#1d1b10;padding:16px;margin-bottom:20px;border-radius:12px}.saved-panel[hidden]{display:none}.saved-panel button{background:#2b2b2b;color:white;border:1px solid #777;padding:9px;margin:4px;border-radius:6px}.hero{background:radial-gradient(ellipse at 80% 0%,#3b330f,transparent 50%)}@media(max-width:700px){.saved-nav{padding:8px;font-size:10px}.heart{width:34px;height:34px;font-size:20px}} 
+/* TREND HUNTER 4.1 — shopping cart */
+body{padding-bottom:72px}.cart-nav{position:fixed;bottom:0;left:0;right:0;z-index:25;background:#111214f5;border-top:1px solid #454545;display:flex;justify-content:space-around;padding:8px 8px calc(8px + env(safe-area-inset-bottom))}.cart-nav button,.cart-nav a{background:transparent;color:#eee;border:0;font-size:12px;font-weight:800;padding:8px;display:flex;flex-direction:column;align-items:center;gap:3px}.cart-nav .nav-icon{font-size:22px}.cart-nav .on{color:var(--lime)}.cart-shade{position:fixed;inset:0;background:#000b;z-index:60;display:none}.cart-shade.open{display:block}.cart-drawer{position:absolute;right:0;top:0;bottom:0;width:min(100%,480px);background:#151617;border-left:1px solid #555;overflow:auto;padding:22px 18px calc(32px + env(safe-area-inset-bottom))}.cart-drawer h2{font-size:29px;margin:8px 0 12px}.cart-line{display:grid;grid-template-columns:74px 1fr;gap:12px;border-bottom:1px solid #383838;padding:14px 0}.cart-line img{width:74px;height:94px;object-fit:contain;background:#292929;border-radius:6px}.cart-line strong{font-size:14px}.cart-line select,.cart-delivery{background:#262626;border:1px solid #777;color:#fff;padding:9px;border-radius:5px;max-width:100%}.cart-controls{display:flex;gap:9px;align-items:center;margin-top:9px}.cart-controls button{background:#303030;border:1px solid #777;color:#fff;border-radius:5px;min-width:32px;min-height:32px}.cart-controls .remove{font-size:11px;padding:0 9px}.cart-checkout{margin-top:22px;border:1px solid #655a26;background:#211e11;border-radius:9px;padding:16px}.cart-checkout p{color:#c5c5c5;font-size:12px;line-height:1.6}.cart-checkout .primary{width:100%;margin-top:12px;font-size:13px;min-height:48px}.cart-close{float:right;background:#333;color:white;border:1px solid #777;border-radius:6px;padding:8px 12px}.cart-add{width:100%;margin-top:8px}.cart-empty{color:#bbb;line-height:1.6}.cart-note{color:#bbb;font-size:12px;line-height:1.6}.cart-quantity{color:var(--lime)}@media(min-width:701px){body{padding-bottom:0}.cart-nav{max-width:410px;left:auto;right:18px;bottom:18px;border:1px solid #444;border-radius:12px;padding:8px}}
+
+/* TREND HUNTER 4.4 — visual polish only */
+:root{--line:#36383a;--panel:#151617}
+.tile{border-color:#343638;box-shadow:0 8px 26px #0003;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.tile:hover{border-color:#a58c24;box-shadow:0 14px 36px #0007}
+.tilephoto img{transition:transform .35s ease}
+.tile:hover .tilephoto img{transform:scale(1.035)}
+.tilebody h3{font-weight:850}
+.primary{transition:filter .2s ease,transform .2s ease,box-shadow .2s ease}
+.primary:hover{box-shadow:0 5px 20px #ffd90f30}
+.primary:active{transform:scale(.985)}
+.pill,.search,.secondary{transition:border-color .2s ease,background .2s ease}
+.pill:hover,.secondary:hover,.search:focus{border-color:#d8b925}
+.cart-line{border-bottom-color:#3d3d3d}
+.cart-checkout{background:linear-gradient(145deg,#28220c,#191914);border-color:#75641e}
+#basketCopy{min-height:56px;font-size:14px;letter-spacing:.04em;box-shadow:0 6px 24px #ffd90f1c}
+#basketCopy:disabled{opacity:.7;cursor:wait}
+@media(max-width:700px){
+ .tile{border-radius:14px}
+ .tilebody{padding:12px}
+ .tilebody h3{font-size:15px;line-height:1.22}
+ .act .primary,.act .secondary{min-height:44px}
+ .hero{padding-top:56px;padding-bottom:55px}
+ .hero .sub{line-height:1.7}
+ .cart-checkout{border-radius:14px}
+ .tile:hover{transform:none}
+ .tile:hover .tilephoto img{transform:none}
+}
+@media(prefers-reduced-motion:reduce){.tilephoto img,.primary,.tile{transition:none!important}}
+
+
+/* TREND HUNTER 4.5 — editorial streetwear refresh */
+:root{--bg:#0b0b0c;--panel:#151515;--line:#303032;--fg:#f6f5f0;--muted:#a5a5a4}
+.top{background:#0b0b0cf5;border-bottom-color:#272727}
+.brand{letter-spacing:-1.15px}
+.marquee{font-size:10px;letter-spacing:2.4px;padding:10px}
+.hero{background:radial-gradient(ellipse at 85% 16%,#3a300e 0%,transparent 48%),linear-gradient(140deg,#0b0b0c,#121211);border-bottom-color:#36312a}
+.hero:after{color:#ffffff06}
+.hero h1{letter-spacing:-.095em}
+.hero .meta span{background:#ffffff06;border-color:#ffffff24}
+.section-title h2{font-weight:950}
+.toolbar{gap:8px}
+.pill{border-radius:100px;background:#191919;padding:12px 17px}
+.search{border-radius:100px;background:#191919;padding-left:18px}
+.catalog{gap:18px}
+.tile{background:#161616;border:1px solid #303030;border-radius:8px;box-shadow:none}
+.tilephoto{background:#252525;aspect-ratio:4/4.9}
+.tilephoto img{object-fit:contain}
+.tilebody{padding:16px}
+.tilebody h3{font-weight:900;letter-spacing:-.035em}
+.cat{letter-spacing:2px}
+.enname{color:#a5a5a5}
+.stamp{background:#101010e8;border:1px solid #777;font-size:10px;letter-spacing:1px}
+.corner{letter-spacing:.4px}
+.tile .primary{font-weight:950}
+.tile .secondary{border-color:#6b612e}
+.tile:hover{border-color:#d0ae2d;box-shadow:0 12px 34px #0007}
+.detail{border-color:#555;border-radius:12px}
+.detailcontent h2{font-weight:950}
+.cart-drawer{background:#111214}
+.cart-line{gap:14px}
+.cart-line img{background:#222}
+.cart-checkout{background:linear-gradient(140deg,#29220e,#191914)}
+@media(max-width:700px){
+ .wrap{padding-left:15px;padding-right:15px}
+ .topin{min-height:64px}
+ .brand{font-size:21px}
+ .hero{padding-top:53px;padding-bottom:51px}
+ .hero h1{font-size:clamp(65px,16vw,105px);line-height:.86}
+ .hero .sub{font-size:14px;line-height:1.65}
+ .hero .meta{gap:7px}
+ .hero .meta span{padding:9px 10px}
+ .section-title{padding-top:43px;padding-bottom:18px}
+ .section-title h2{font-size:clamp(40px,10vw,60px)}
+ .toolbar{gap:7px}
+ .pill{padding:11px 13px;font-size:12px}
+ .catalog{gap:10px}
+ .tile{border-radius:9px}
+ .tilephoto{aspect-ratio:4/5}
+ .tilebody{padding:12px 10px 13px}
+ .tilebody h3{font-size:14px;line-height:1.24;min-height:35px}
+ .tilebody .price{font-size:10px;letter-spacing:.3px}
+ .enname{font-size:11px}
+ .act{gap:6px}
+ .act .primary,.act .secondary{font-size:10px;min-height:43px}
+ .stamp{font-size:9px;padding:7px}
+ .corner{font-size:9px;padding:7px}
+ .detail{border-radius:10px}
+ .detailcontent{padding:21px}
+ .cart-drawer{padding-top:25px}
+}
+@media(max-width:380px){.act{grid-template-columns:1fr}.act .primary,.act .secondary{min-height:39px}}
+
+
+/* TREND HUNTER 4.6 / UNDERGROUND STREETWEAR */
+:root{--lime:#ffda0a}
+.top{border-bottom:1px solid #ffda0a33}
+.brand{font-weight:950;letter-spacing:-1.4px}
+.marquee{background:#ffda0a;color:#080808;font-size:10px;font-weight:950;letter-spacing:1.7px}
+.hero{isolation:isolate;min-height:0;background:radial-gradient(circle at 90% 30%,#4c3b0b80,transparent 47%),repeating-linear-gradient(120deg,transparent 0 46px,#ffffff04 47px 48px),#0d0d0d}
+.hero:after{content:"TH";font-size:clamp(190px,40vw,520px);right:-1%;bottom:-20%;color:#ffda0a0b;transform:rotate(-12deg);letter-spacing:-.12em}
+.hero h1{font-weight:950;text-transform:uppercase;letter-spacing:-.105em}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px}
+.hero .eyebrow:before{content:"";display:inline-block;width:9px;height:9px;background:var(--lime);transform:rotate(45deg)}
+.hero .meta span{border-color:#5e5125;background:#ffda0a0b}
+.section-title h2{position:relative;text-transform:uppercase}
+.section-title h2:after{content:" / 001";font-size:.23em;color:var(--lime);letter-spacing:0;vertical-align:top;margin-left:9px}
+.tile{position:relative;border-radius:3px;border-color:#454545;background:#141414}
+.tile:before{content:"";position:absolute;z-index:2;top:-1px;left:-1px;width:24px;height:3px;background:var(--lime);pointer-events:none}
+.tilephoto{background:#222}
+.tilebody{border-top:1px solid #353535}
+.tilebody h3{font-weight:950}
+.stamp{border-radius:0;background:#0b0b0be8;border-color:#777}
+.corner{background:#ffda0a}
+.tile .primary{border-radius:2px}
+.tile .secondary{border-radius:2px}
+.pill.active{box-shadow:inset 0 -3px #0003}
+.cart-nav .on{color:var(--lime)}
+@media(max-width:700px){
+ .topin{min-height:59px}
+ .toplinks .saved-nav{display:none}
+ .toplinks .tgb{padding:11px 13px;font-size:10px}
+ .marquee{padding:9px 14px;font-size:9px;letter-spacing:1.1px;line-height:1.5}
+ .hero{padding-top:34px;padding-bottom:30px}
+ .hero h1{font-size:clamp(56px,14vw,90px);line-height:.86;margin:14px 0 17px}
+ .hero .sub{font-size:13px;line-height:1.55;max-width:380px}
+ .hero .meta{margin-top:17px;gap:6px}
+ .hero .meta span{padding:7px 9px;font-size:9px}
+ .hero:after{font-size:70vw;right:-4%;bottom:-12%}
+ .section-title{padding-top:31px}
+ .section-title h2{font-size:clamp(35px,9vw,56px)}
+ .tile{border-radius:3px}
+ .tilebody{padding:11px 10px 12px}
+ .tilebody h3{font-size:14px}
+ .tile .primary,.tile .secondary{letter-spacing:-.2px}
+ .tile:hover{border-color:#454545}
+}
+@media(max-width:360px){.brand{font-size:19px}.toplinks .tgb{padding:10px;font-size:9px}}
+
+
+/* TREND HUNTER 4.7 — editorial hero + clean luxury catalog */
+.hero{background:radial-gradient(ellipse at 86% 22%,#66500e55,transparent 52%),repeating-linear-gradient(120deg,transparent 0 46px,#ffffff04 47px 48px),#0c0c0c}
+.hero h1{text-shadow:0 12px 48px #0008}
+.hero .meta span{border:1px solid #68551e;background:#17140b;color:#e9e6d9}
+.section-title h2{letter-spacing:-.065em}
+.section-title h2:after{content:"";display:none}
+.catalog{gap:20px}
+.tile,.tile:hover{border:1px solid #292929;background:#151515;border-radius:10px;box-shadow:none}
+.tile:before{display:none}
+.tilephoto{background:#242424}
+.tilebody{border-top:1px solid #2d2d2d}
+.tilebody h3{font-weight:800;letter-spacing:-.025em}
+.cat{font-size:10px;letter-spacing:1.5px}
+.stamp{background:#101010e8;border:1px solid #777;border-radius:3px}
+.corner{background:#ffda0a;border-radius:2px}
+.tile .primary{border-radius:5px}
+.tile .secondary{border-radius:5px;border-color:#4b4531;color:#e9e8e2}
+.tile:hover{transform:translateY(-2px);border-color:#5e5433}
+.tile:hover .tilephoto img{transform:scale(1.02)}
+@media(max-width:700px){
+ .hero{padding-top:37px;padding-bottom:34px}
+ .hero h1{font-size:clamp(58px,14vw,92px);margin:15px 0 18px}
+ .hero .meta{margin-top:17px}
+ .section-title{padding-top:31px;padding-bottom:17px}
+ .section-title h2{font-size:clamp(37px,9vw,56px)}
+ .catalog{gap:11px}
+ .tile,.tile:hover{border-radius:9px}
+ .tilebody{padding:12px 10px 13px}
+ .tilebody h3{font-size:14px}
+ .tile:hover{transform:none}
+ .tile:hover .tilephoto img{transform:none}
+ .act .primary,.act .secondary{min-height:44px}
+}
+
+
+/* TREND HUNTER 4.8 — quiet luxury streetwear */
+:root{--fg:#f1eee6;--muted:#aaa9a3;--lime:#e6c54d}
+body{background:#0d0d0e}
+.top{background:#0d0d0df5;border-bottom:1px solid #2b2a28}
+.brand{letter-spacing:-1.05px}
+.toplinks .tgb{background:#e6c54d;color:#101010;border-radius:5px}
+.marquee{background:#d9ba4a;color:#111;letter-spacing:1.5px}
+.hero{background:radial-gradient(ellipse at 83% 23%,#67552a30,transparent 58%),#101011}
+.hero:after{color:#e6c54d07;transform:rotate(-9deg)}
+.hero h1{letter-spacing:-.095em}
+.hero h1 span{color:#e6c54d}
+.hero .meta span{background:#171615;border-color:#444036}
+.section-title h2{font-weight:850}
+.catalog{gap:18px}
+.tile,.tile:hover{background:#171718;border:1px solid #323233;border-radius:12px;overflow:hidden}
+.tilephoto{background:#242426;aspect-ratio:4/4.9}
+.tilebody{border-top:1px solid #303031}
+.tilebody h3{font-weight:800;letter-spacing:-.02em}
+.cat{color:#d9bd62}
+.stamp{top:11px;left:11px;background:#101011d9;border:1px solid #8a8985;color:#f4f3ee;border-radius:4px}
+.corner{position:absolute!important;top:11px!important;right:11px!important;bottom:auto!important;left:auto!important;background:#171718dd!important;color:#dfc979!important;border:1px solid #81734a!important;border-radius:4px!important;font-size:9px!important;letter-spacing:.6px!important;padding:7px!important;z-index:2!important;pointer-events:none!important}
+.heart{top:49px!important}
+.tile .primary{background:#e6c54d;border-color:#e6c54d;color:#111;border-radius:5px}
+.tile .secondary{border-color:#5a5342;border-radius:5px}
+.pill.active{background:#e6c54d;border-color:#e6c54d}
+.cart-checkout{background:linear-gradient(145deg,#28251b,#181819)}
+@media(max-width:700px){
+ .hero{padding-top:35px;padding-bottom:32px}
+ .hero h1{font-size:clamp(56px,13.8vw,90px)}
+ .hero .sub{color:#bfbdb6}
+ .hero .meta span{font-size:9px}
+ .catalog{gap:11px}
+ .tile,.tile:hover{border-radius:10px}
+ .tilephoto{aspect-ratio:4/5}
+ .tilebody{padding:12px 10px}
+ .corner{font-size:8px!important;padding:6px!important}
+ .heart{top:44px!important}
+ .cart-nav{padding-top:8px!important;padding-bottom:calc(8px + env(safe-area-inset-bottom))!important}
+ .cart-nav .nav-icon{font-size:22px!important;line-height:1.1!important}
+}
+
+
+/* TREND HUNTER 5.0 — Fashion Editorial hero only */
+.hero.fashion-hero{position:relative;display:flex;align-items:flex-end;isolation:isolate;min-height:clamp(540px,78vh,860px);padding-top:90px;padding-bottom:65px;overflow:hidden;background:#101010 url("%D0%90%D1%82%D0%BC%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82%20%D0%B2%20%D0%B1%D0%B5%D1%82%D0%BE%D0%BD%D0%BD%D0%BE%D0%BC%20%D0%B3%D0%B0%D1%80%D0%B0%D0%B6%D0%B5.png") center 35% / cover no-repeat}
+.hero.fashion-hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.83) 0%,rgba(0,0,0,.54) 46%,rgba(0,0,0,.16) 100%),linear-gradient(0deg,rgba(0,0,0,.86),transparent 65%)}
+.hero.fashion-hero:after{display:none}
+.fashion-hero-content{position:relative;z-index:1;max-width:790px}
+.fashion-hero .eyebrow{font-size:12px;letter-spacing:3px;color:#e6c54d}
+.fashion-hero .eyebrow:before{display:none}
+.fashion-hero h1{font-size:clamp(62px,9vw,142px);line-height:.88;letter-spacing:-.085em;margin:24px 0 24px;color:#f6f4ee;text-shadow:0 4px 30px #0008}
+.fashion-hero h1 span{color:#f6f4ee}
+.fashion-hero .sub{max-width:430px;font-size:17px;color:#e5e2dc;line-height:1.55;margin-bottom:28px}
+.fashion-hero-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;min-height:54px;padding:15px 19px;background:#e6c54d;color:#121212;border-radius:3px;font-weight:900;letter-spacing:1px;font-size:12px;transition:background .2s ease,transform .2s ease}
+.fashion-hero-cta:hover{background:#f4d86d;transform:translateY(-2px)}
+.fashion-hero-cta span{font-size:21px;line-height:1}
+.fashion-hero-foot{margin-top:40px;font-size:10px;letter-spacing:2px;color:#dad5c9}
+#catalog{scroll-margin-top:90px}
+@media(max-width:700px){
+ .hero.fashion-hero{min-height:clamp(510px,73svh,720px);padding-top:70px;padding-bottom:58px;background-position:55% 30%}
+ .hero.fashion-hero:before{background:linear-gradient(0deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.68) 34%,rgba(0,0,0,.13) 85%),linear-gradient(90deg,rgba(0,0,0,.4),transparent)}
+ .fashion-hero h1{font-size:clamp(48px,12vw,76px);line-height:.93;margin:18px 0}
+ .fashion-hero .eyebrow{font-size:10px;letter-spacing:2px}
+ .fashion-hero .sub{font-size:14px;max-width:280px;margin-bottom:22px}
+ .fashion-hero-cta{min-height:48px;padding:12px 15px;font-size:11px}
+ .fashion-hero-foot{margin-top:24px;font-size:9px;letter-spacing:1.5px}
+ #catalog{scroll-margin-top:75px}
+}
+@media(prefers-reduced-motion:reduce){.fashion-hero-cta{transition:none}}
+
+
+/* TREND HUNTER 5.1 — luxury detail refinements */
+.fashion-hero-cta .fashion-arrow{font-family:Arial,Helvetica,sans-serif;font-size:23px;line-height:1;font-weight:400;display:inline-block;transform:translateY(-1px)}
+.corner{font-size:8px!important;letter-spacing:.35px!important;padding:5px 6px!important;top:8px!important;right:8px!important;background:#171718d9!important;border-color:#6c6146!important}
+@media(max-width:700px){
+ body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+ .cart-nav{background:#101011f9!important;border-top:1px solid #343436!important;padding:6px 6px calc(5px + env(safe-area-inset-bottom))!important;gap:0;align-items:center}
+ .cart-nav a,.cart-nav button{flex:1;min-width:0;padding:4px 2px!important;gap:2px!important;font-size:10px!important;line-height:1.15!important;font-weight:700!important}
+ .cart-nav .nav-icon{font-size:20px!important;line-height:1!important}
+ .cart-nav .cart-quantity{font-size:10px!important;line-height:1!important}
+ .corner{font-size:7px!important;padding:4px 5px!important}
+}
+
+
+/* TREND HUNTER 5.2 — sizes per item, preserve checkout protocol */
+.cart-sizes{margin-top:12px;padding:10px;background:#202021;border:1px solid #45413a;border-radius:7px}
+.cart-size-label{font-size:10px;letter-spacing:1px;font-weight:800;color:#d9bd62;margin-bottom:7px}
+.cart-size-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:7px 0;font-size:12px;color:#c9c7c0}
+.cart-size-row select{min-width:0;width:70%;min-height:36px;font-size:13px;background:#2a2928;color:#f5f4ef;border:1px solid #69645b;border-radius:5px;padding:6px}
+.cart-line{grid-template-columns:64px minmax(0,1fr)}
+.cart-line img{width:64px;height:86px}
+@media(max-width:700px){.cart-sizes{padding:8px}.cart-size-row select{width:73%}}
+
+
+/* TREND HUNTER 5.3 — size selector on each product detail */
+.detail-size-box{margin-top:22px;padding:14px;border:1px solid #4e4736;border-radius:8px;background:#1b1a18}
+.detail-size-box label{display:block;font-size:11px;font-weight:900;letter-spacing:1.6px;color:#e6c54d;margin-bottom:10px}
+.detail-size-box select{display:block;width:100%;min-height:48px;background:#292929;border:1px solid #777;color:#f4f3ed;border-radius:5px;padding:10px 12px;font-size:15px}
+.detail-size-box p{font-size:12px;color:#aaa;margin:9px 0 0;line-height:1.5}
+.detail-size-box+.actions{margin-top:12px}
+
+
+/* TREND HUNTER 5.4 — supplier-safe size guidance */
+.size-guide-trigger{display:block;margin-top:11px;padding:6px 0;border:0;background:none;color:#e6c54d;font-size:12px;font-weight:800;letter-spacing:.5px;text-align:left;text-decoration:underline;text-underline-offset:4px}
+.size-guide-overlay[hidden]{display:none!important}
+.size-guide-overlay{position:fixed;inset:0;z-index:200;background:#000c;display:flex;align-items:center;justify-content:center;padding:18px}
+.size-guide-dialog{position:relative;width:min(100%,520px);max-height:85dvh;overflow-y:auto;background:#181818;border:1px solid #706044;border-radius:10px;padding:28px 23px;color:#f4f3ed;box-shadow:0 20px 70px #000b}
+.size-guide-close{position:absolute;right:13px;top:10px;background:none;border:0;color:#fff;font-size:29px}
+.size-guide-kicker{font-size:10px;letter-spacing:2px;color:#e6c54d;font-weight:800}
+.size-guide-dialog h3{font-size:23px;line-height:1.15;margin:14px 35px 20px 0}
+.size-guide-dialog #sizeGuideText p{font-size:14px;line-height:1.65;margin:10px 0;color:#dedbd5}
+.size-guide-note{border-top:1px solid #45413a;margin-top:18px;padding-top:15px;font-size:12px;line-height:1.6;color:#bbb5aa}
+.size-guide-done{margin-top:15px;width:100%;padding:13px;border:0;border-radius:4px;background:#e6c54d;color:#111;font-weight:900;letter-spacing:1px}
+
+
+/* TREND HUNTER 5.5 — Tashkent-first ordering guide */
+.th55-guide{padding-top:72px;padding-bottom:76px}
+.th55-head{max-width:800px}
+.th55-head h2{font-size:clamp(40px,7vw,88px);letter-spacing:-.065em;line-height:1;margin:18px 0}
+.th55-dot{color:#e6c54d}
+.th55-head>p{color:#c7c4bd;font-size:clamp(15px,2vw,19px);line-height:1.65;max-width:660px}
+.th55-city{display:inline-block;margin:15px 0 30px;padding:10px 13px;border:1px solid #75643e;color:#e6c54d;font-size:11px;font-weight:800;letter-spacing:1px}
+.th55-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.th55-steps>div{padding:22px 18px;min-width:0;background:#181818;border:1px solid #353332}
+.th55-steps span,.th55-shipping-grid span{display:block;font-size:11px;letter-spacing:1.3px;color:#e6c54d;font-weight:800;margin-bottom:19px}
+.th55-steps strong{display:block;font-size:18px}
+.th55-steps p{font-size:13px;color:#bdbab3;line-height:1.6}
+.th55-shipping{margin-top:24px;padding:27px;background:#1a1916;border:1px solid #645735}
+.th55-shipping h3{font-size:clamp(26px,4vw,44px);margin:13px 0 25px;letter-spacing:-.04em}
+.th55-shipping-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.th55-shipping-grid>div{padding:19px;background:#101010;border:1px solid #474137}
+.th55-shipping-grid strong{display:block;font-size:clamp(20px,3vw,32px);margin-bottom:8px}
+.th55-shipping-grid small{color:#b8b5ad}
+.th55-shipping>p{color:#bbb6ac;font-size:13px;line-height:1.7;margin:22px 0 0}
+.th55-cta{display:inline-flex;align-items:center;gap:35px;background:#e6c54d;color:#111;padding:17px 22px;font-weight:900;letter-spacing:1px;margin-top:24px;font-size:12px}
+.th55-cta span{font-size:22px;font-weight:400}
+@media(max-width:760px){.th55-guide{padding-top:52px;padding-bottom:60px}.th55-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.th55-steps>div{padding:16px 13px}.th55-steps strong{font-size:15px}.th55-steps p{font-size:12px}.th55-shipping{padding:18px 13px}.th55-shipping-grid{grid-template-columns:1fr;gap:8px}.th55-shipping-grid>div{padding:14px}.th55-shipping-grid span{margin-bottom:6px}.th55-shipping-grid strong{font-size:23px}.th55-city{font-size:10px;line-height:1.5}}
+
+
+/* TREND HUNTER 5.6 — mobile viewport and fixed navigation refinement */
+html{scroll-padding-top:90px}
+@media(max-width:700px){
+ body{padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+ .cart-nav{min-height:70px;align-items:center;gap:2px;padding:8px 8px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(13,13,15,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 -12px 30px #0007}
+ .cart-nav button,.cart-nav a{min-width:0;flex:1;min-height:51px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:11px;line-height:1.2;text-align:center;white-space:normal}
+ .cart-nav .nav-icon{font-size:22px;line-height:1}
+ #catalog,#saved,#delivery-info,#top{scroll-margin-top:84px}
+ .th55-guide{padding-bottom:calc(125px + env(safe-area-inset-bottom,0px))}
+ .th55-steps{gap:9px}
+ .th55-steps>div{padding:16px 12px}
+ .th55-steps span{font-size:10px;margin-bottom:12px}
+ .th55-steps p{line-height:1.5;margin-bottom:0}
+ .th55-shipping-grid>div{display:grid;grid-template-columns:1fr auto;column-gap:8px;align-items:center}
+ .th55-shipping-grid span{grid-column:1/-1}
+ .th55-shipping-grid small{text-align:right}
+ .th55-cta{min-height:49px}
+ .toast{bottom:calc(96px + env(safe-area-inset-bottom,0px));max-width:calc(100vw - 30px);white-space:normal;text-align:center}
+ .overlay{padding:12px 12px calc(95px + env(safe-area-inset-bottom,0px))}
+ .detail{max-height:calc(100dvh - 125px)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* TREND HUNTER 5.8 — transparent ordering FAQ */
+.th58-trust{padding:30px 0 80px;border-top:1px solid #35302a}
+.th58-trust h2{font-size:clamp(34px,6vw,66px);line-height:1.02;letter-spacing:-.055em;margin:15px 0 16px}
+.th58-intro{max-width:700px;color:#bbb;font-size:16px;line-height:1.65;margin:0 0 28px}
+.th58-faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.th58-faq details{background:#171717;border:1px solid #393632;padding:19px 20px;min-width:0}
+.th58-faq summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;font-weight:800;line-height:1.4}
+.th58-faq summary::-webkit-details-marker{display:none}
+.th58-faq summary::after{content:"+";color:#e6c54d;font-size:26px;font-weight:400}
+.th58-faq details[open] summary::after{content:"−"}
+.th58-faq p{color:#bdbbb7;line-height:1.65;margin:15px 0 0}
+.th58-contact{margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px;border:1px solid #6c5b2e}
+.th58-contact p{margin:0;color:#c9c6c0;line-height:1.5}
+.th58-contact a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 18px;background:#e6c54d;color:#111;text-decoration:none;font-weight:900;white-space:nowrap}
+@media(max-width:700px){.th58-trust{padding:35px 0 115px}.th58-faq{grid-template-columns:1fr}.th58-contact{flex-direction:column;align-items:stretch}.th58-contact a{width:100%}}
+/* TREND HUNTER 5.11 — brand value section */
+.th511-why{padding:70px 0 65px;border-top:1px solid #34312c}
+.th511-why h2{font-size:clamp(42px,7vw,88px);line-height:.98;letter-spacing:-.065em;margin:18px 0 34px}
+.th511-why h2 span{color:#e6c54d}
+.th511-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.th511-grid>div{background:#171717;border:1px solid #393632;padding:24px;min-width:0}
+.th511-grid span{display:block;color:#e6c54d;font-size:11px;letter-spacing:1.4px;font-weight:800;margin-bottom:19px}
+.th511-grid strong{display:block;font-size:17px;line-height:1.35}
+.th511-grid p{color:#bdbbb7;font-size:14px;line-height:1.7;margin:14px 0 0}
+@media(max-width:700px){.th511-why{padding:46px 0}.th511-grid{grid-template-columns:1fr}.th511-grid>div{padding:19px}.th511-why h2{margin-bottom:24px}}
 </style></head>
-<body><header class="top"><div class="wrap topin"><a href="#top" class="brand" aria-label="TREND HUNTER, главная">TREND <em>HUNTER</em></a><nav class="toplinks"><a href="#catalog">Каталог</a><a class="tgb" href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer">НАПИСАТЬ</a></nav></div></header>
+<body><header class="top"><div class="wrap topin"><a href="#top" class="brand" aria-label="TREND HUNTER, главная">TREND <em>HUNTER</em></a><nav class="toplinks"><a href="#catalog">Каталог</a><a class="saved-nav" href="#saved">♡ <span id="favCount">0</span> · Подборка <span id="cartCount">0</span></a><a class="tgb" href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer">НАПИСАТЬ</a></nav></div></header>
 <div class="marquee">DROP 001 ◆ STREETWEAR / DENIM ◆ DIRECT TELEGRAM ONLY ◆ NO CALLS</div>
-<main id="top"><section class="hero wrap"><div class="eyebrow">CURATED GOODS / TASHKENT / 2026</div><h1>FIND.<br>SELECT.<br><span>OWN.</span></h1><p class="sub">Вещи с характером. Деним, графика и необычные находки. Выбирай вещи с характером. Оформляй заявку через нашего Telegram-бота и выбирай удобную доставку.</p><div class="meta"><span>15 ПРЕДМЕТОВ / DROP 001</span><span>ЦЕНА ПО ЗАПРОСУ</span><span>ТОЛЬКО ЧАТ · БЕЗ ЗВОНКОВ</span></div></section>
-<section class="wrap" id="catalog"><div class="section-title"><div><div class="eyebrow">DROP 001 / THE FIRST SELECTION</div><h2>THE CATALOG</h2></div><p>Открой карточку, выбери доставку и отправь заявку через Telegram-бота.</p></div><div class="toolbar"><button class="pill active" type="button" data-filter="Все" aria-pressed="true">Все товары</button><button class="pill" type="button" data-filter="Джинсы" aria-pressed="false">Джинсы</button><button class="pill" type="button" data-filter="Трикотаж" aria-pressed="false">Трикотаж</button><input class="search" id="search" aria-label="Поиск по названию или артикулу" placeholder="Поиск: название или TH-001" autocomplete="off"></div><p class="count" id="count" aria-live="polite"></p><div class="catalog" id="cards"></div><p class="empty" id="empty" hidden>По запросу ничего не найдено.</p></section>
-<section class="wrap" id="delivery-info"><div class="delivery-banner"><div class="eyebrow">SHIPPING / CHOOSE YOUR SPEED</div><h2>ДОСТАВКА ПОД ТВОЙ РИТМ.</h2><div class="delivery-grid"><div><b>01 / EXPRESS</b><strong>3–5 дней</strong><span>Быстро · дороже</span></div><div><b>02 / STANDARD</b><strong>7–10 дней</strong><span>Баланс цены и срока</span></div><div><b>03 / ECONOMY</b><strong>18–25 дней</strong><span>Выгодно · дольше</span></div></div><p>Стоимость доставки рассчитываем по товару и весу. Указанные сроки — ориентир, не гарантия.</p></div></section><section class="wrap" id="photo-search"><div class="photohelp"><div><div class="eyebrow">FIND BY PHOTO / PERSONAL SOURCING</div><h3>НАШЁЛ ВЕЩЬ? ПРИШЛИ ФОТО.</h3><p>Покажи фотографию товара в Telegram. Мы обсудим возможность поиска, стоимость и доставку. Только переписка.</p></div><a class="primary" href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer">НАПИСАТЬ БОТУ</a></div></section><section class="faq wrap" id="how"><div><div class="eyebrow">HOW TO ORDER / DIRECT CONTACT</div><h2>ТВОЙ СТИЛЬ.<br>ТВОИ ПРАВИЛА.</h2><p>Выбери вещь и способ доставки, затем открой бота. Цену, размеры и наличие подтвердим до оплаты.</p><a href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer" class="finalcta">ОТКРЫТЬ БОТА ↗</a></div><div><div class="eyebrow" style="margin-bottom:22px">4 SIMPLE STEPS</div><div class="steps"><div class="step"><b>01</b><span>Выбери товар и открой его карточку.</span></div><div class="step"><b>02</b><span>Выбери способ доставки: Express, Standard или Economy.</span></div><div class="step"><b>03</b><span>Нажми «Оформить через бота» и запусти бота, если он попросит.</span></div><div class="step"><b>04</b><span>Подтверди размер, итоговую цену с доставкой и условия оплаты.</span></div></div><p style="color:var(--muted);font-size:12px;line-height:1.7">Фото и описания носят ознакомительный характер. Наличие и характеристики подтверждаются перед оформлением. Мы не принимаем оплату на сайте.</p></div></section></main>
+<main id="top"><section class="hero fashion-hero wrap" aria-label="TREND HUNTER — новая коллекция"><div class="fashion-hero-content"><div class="eyebrow">TREND HUNTER / COLLECTION 001</div><h1>NOT FOR<br><span>EVERYONE.</span></h1><p class="sub">Вещи для тех, кто выбирает свой стиль.</p><a class="fashion-hero-cta" href="#catalog">СМОТРЕТЬ КАТАЛОГ <span class="fashion-arrow" aria-hidden="true">→</span></a><div class="fashion-hero-foot">TASHKENT · STREETWEAR · DROP 001</div></div></section>
+<section class="wrap" id="catalog"><div class="section-title"><div><div class="eyebrow">DROP 001 / THE FIRST SELECTION</div><h2>THE CATALOG</h2></div><p>Открой карточку, выбери доставку и отправь заявку через Telegram-бота.</p></div><div class="toolbar"><button class="pill active" type="button" data-filter="Все" aria-pressed="true">Все товары</button><button class="pill" type="button" data-filter="Джинсы" aria-pressed="false">Джинсы</button><button class="pill" type="button" data-filter="Трикотаж" aria-pressed="false">Трикотаж</button><input class="search" id="search" aria-label="Поиск по названию или артикулу" placeholder="Поиск: название или TH-001" autocomplete="off"></div><p class="count" id="count" aria-live="polite"></p><div id="saved" class="saved-panel" hidden><b>ИЗБРАННОЕ И ПОДБОРКА</b><p>Открой товар из списка, чтобы оформить заявку через Telegram. Заявки отправляются по одной.</p><div id="savedItems"></div><button id="clearCart" type="button">Очистить подборку</button></div><div class="catalog" id="cards"></div><p class="empty" id="empty" hidden>По запросу ничего не найдено.</p></section>
+<section class="wrap th511-why" aria-labelledby="th511-title"><div class="eyebrow">TREND HUNTER / OUR APPROACH</div><h2 id="th511-title">ТВОЙ СТИЛЬ.<br><span>ТВОЙ ВЫБОР.</span></h2><div class="th511-grid"><div><span>01 / CURATED</span><strong>ПОДБОРКА, А НЕ БЕСКОНЕЧНЫЙ КАТАЛОГ</strong><p>Собираем streetwear-вещи в одной коллекции, чтобы было проще найти свой образ.</p></div><div><span>02 / DIRECT</span><strong>ЗАКАЗ НАПРЯМУЮ В TELEGRAM</strong><p>Выбираешь товар и размер на сайте, затем подтверждаешь заявку через бота.</p></div><div><span>03 / CLEAR</span><strong>ВСЁ СОГЛАСУЕМ ЗАРАНЕЕ</strong><p>Уточняем наличие, размер, итоговую стоимость и сроки до оплаты.</p></div></div></section><section class="wrap th55-guide" id="delivery-info" aria-labelledby="th55-heading"><div class="th55-head"><div class="eyebrow">TREND HUNTER / TASHKENT ONLY</div><h2 id="th55-heading">КАК ЗАКАЗАТЬ<span class="th55-dot">.</span></h2><p>Подбирай вещи в каталоге. Мы уточним наличие, размер, цену и условия получения заказа в Ташкенте до оплаты.</p><span class="th55-city">◈ СЕЙЧАС РАБОТАЕМ ТОЛЬКО ПО ТАШКЕНТУ</span></div><div class="th55-steps"><div><span>01 / SELECT</span><strong>Выбери вещь</strong><p>Открой товар и укажи желаемый размер. Если сомневаешься — выбери «Уточнить».</p></div><div><span>02 / CART</span><strong>Собери корзину</strong><p>Добавь несколько вещей, при необходимости выбери разные размеры и количество.</p></div><div><span>03 / TELEGRAM</span><strong>Подтверди заявку</strong><p>Оформи заказ через Telegram-бота. Он покажет состав заказа для подтверждения.</p></div><div><span>04 / CONFIRM</span><strong>Согласуй детали</strong><p>Перед оплатой уточним наличие, итоговую цену, сроки и способ получения в Ташкенте.</p></div></div><div class="th55-shipping"><div class="eyebrow">DELIVERY OPTIONS / ESTIMATED SUPPLIER LEAD TIMES</div><h3>ВЫБЕРИ СВОЙ ТЕМП.</h3><div class="th55-shipping-grid"><div><span>01 / EXPRESS</span><strong>3–5 дней</strong><small>Быстрее · дороже</small></div><div><span>02 / STANDARD</span><strong>7–10 дней</strong><small>Баланс цены и срока</small></div><div><span>03 / ECONOMY</span><strong>18–25 дней</strong><small>Экономнее · дольше</small></div></div><p>Сроки ориентировочные и относятся к получению товара от поставщика, а не к курьерской доставке по городу. Стоимость и способ передачи в Ташкенте согласовываются отдельно. Оплата на сайте не принимается.</p></div><a class="th55-cta" href="#catalog">ПЕРЕЙТИ К ТОВАРАМ <span aria-hidden="true">→</span></a></section><section class="wrap th58-trust" id="faq" aria-labelledby="th58-title"><div class="eyebrow">TREND HUNTER / BEFORE YOU ORDER</div><h2 id="th58-title">ВСЁ ПО ДЕЛУ<span style="color:#e6c54d">.</span></h2><p class="th58-intro">Понятные условия без неожиданностей. После согласования заказа — предоплата 50%, оставшиеся 50% при личном получении товара в Ташкенте. Подтверждение заявки в Telegram ещё не означает оплату или гарантию наличия.</p><div class="th58-faq">
+<details><summary>Когда я узнаю итоговую цену?</summary><p>После заявки мы уточним цену вещи, наличие, размер и стоимость доставки. Все суммы согласуем до оплаты.</p></details>
+<details><summary>Как проходит оплата?</summary><p>После подтверждения наличия, размера, итоговой стоимости и условий заказа в Telegram вносится предоплата 50% — предпочтительно переводом на карту по реквизитам, которые менеджер сообщит лично в переписке. По договорённости предоплату можно внести при встрече в Ташкенте. Оставшиеся 50% оплачиваются при личном получении товара. На сайте оплата не принимается.</p></details>
+<details><summary>Вы доставляете по всему Узбекистану?</summary><p>На первом этапе принимаем заказы для Ташкента. Возможность и способ получения согласуем в переписке.</p></details>
+<details><summary>Сроки 3–5, 7–10 и 18–25 дней — точные?</summary><p>Нет, это ориентировочные сроки получения товара от поставщика. Фактический срок и передачу по Ташкенту уточним перед оплатой.</p></details>
+<details><summary>Как выбрать размер?</summary><p>Выбери размер в карточке или вариант «Уточнить размер». Мы проверим доступность у поставщика; рекомендации по измерениям есть в карточке товара.</p></details>
+<details><summary>Можно ли вернуть или обменять вещь?</summary><p>Условия возврата и обмена зависят от обстоятельств покупки и применимых правил. До оплаты запроси условия для конкретного заказа в Telegram. Твои законные права покупателя сохраняются.</p></details>
+</div><div class="th58-contact"><p><strong>Остались вопросы?</strong> Напиши нам в Telegram до оформления или оплаты заказа.</p><a href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer">НАПИСАТЬ В TELEGRAM →</a></div></section><section class="wrap" id="photo-search"><div class="photohelp"><div><div class="eyebrow">FIND BY PHOTO / PERSONAL SOURCING</div><h3>НАШЁЛ ВЕЩЬ? ПРИШЛИ ФОТО.</h3><p>Покажи фотографию товара в Telegram. Мы обсудим возможность поиска, стоимость и доставку. Только переписка.</p></div><a class="primary" href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer">НАПИСАТЬ БОТУ</a></div></section></main>
 <footer class="wrap footer"><span>TREND HUNTER © 2026 · DROP 001</span><span>ЗАКАЗЫ: @TrendHunterShopBot · ТОЛЬКО ЧАТ</span></footer>
-<div class="overlay" id="overlay" role="presentation"><section class="detail" id="detail" role="dialog" aria-modal="true" aria-labelledby="detailTitle" tabindex="-1"><button id="close" class="close" aria-label="Закрыть карточку">×</button><div class="detailimage"><img id="detailImg" alt=""></div><div class="detailcontent"><div class="eyebrow" id="detailCode"></div><h2 id="detailTitle"></h2><div class="englishname" id="detailEnglish"></div><div class="cat" id="detailCategory"></div><p class="desc" id="detailDesc"></p><strong style="margin-top:8px">ЦЕНА ПО ЗАПРОСУ</strong><p class="note">Итоговая цена товара и доставки подтверждается перед оплатой. Сроки ориентировочные.</p><div class="delivery-picker"><label for="delivery">СПОСОБ ДОСТАВКИ</label><select id="delivery"><option value="EXPRESS">EXPRESS · 3–5 дней · дорого</option><option value="STANDARD" selected>STANDARD · 7–10 дней · средняя стоимость</option><option value="ECONOMY">ECONOMY · 18–25 дней · экономно</option></select><small>Сроки ориентировочные. Стоимость рассчитывается индивидуально.</small></div><div class="actions"><button type="button" class="secondary" id="copyRequest">СКОПИРОВАТЬ ЗАЯВКУ</button><a class="primary" href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer" id="openTG">ОФОРМИТЬ ЧЕРЕЗ БОТА</a></div></div></section></div><div class="toast" id="toast" role="status"></div>
+<div class="overlay" id="overlay" role="presentation"><section class="detail" id="detail" role="dialog" aria-modal="true" aria-labelledby="detailTitle" tabindex="-1"><button id="close" class="close" aria-label="Закрыть карточку">×</button><div class="detailimage"><img id="detailImg" alt=""></div><div class="detailcontent"><div class="eyebrow" id="detailCode"></div><h2 id="detailTitle"></h2><div class="englishname" id="detailEnglish"></div><div class="cat" id="detailCategory"></div><p class="desc" id="detailDesc"></p><strong style="margin-top:8px">ЦЕНА ПО ЗАПРОСУ</strong><p class="note">Итоговая цена товара и доставки подтверждается перед оплатой. Сроки ориентировочные.</p><div class="delivery-picker"><label for="delivery">СПОСОБ ДОСТАВКИ</label><select id="delivery"><option value="EXPRESS">EXPRESS · 3–5 дней · дорого</option><option value="STANDARD" selected>STANDARD · 7–10 дней · средняя стоимость</option><option value="ECONOMY">ECONOMY · 18–25 дней · экономно</option></select><small>Сроки ориентировочные. Стоимость рассчитывается индивидуально.</small></div><div class="actions"><button type="button" class="secondary" id="copyRequest">СКОПИРОВАТЬ ЗАЯВКУ</button><a class="primary" href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer" id="openTG">ОФОРМИТЬ ЧЕРЕЗ БОТА</a></div></div></section></div>
+<nav class="cart-nav" aria-label="Меню магазина"><a href="#top"><span class="nav-icon">⌂</span>Главная</a><a href="#catalog"><span class="nav-icon">▦</span>Каталог</a><button type="button" id="navFavorites"><span class="nav-icon">♡</span>Избранное</button><button type="button" id="navCart" class="on"><span class="nav-icon">▣</span>Корзина <span class="cart-quantity" id="basketBadge">0</span></button></nav>
+<div class="cart-shade" id="basketShade"><section class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="basketTitle"><button type="button" class="cart-close" id="basketClose" aria-label="Закрыть корзину">✕</button><div class="eyebrow">TREND HUNTER / CHECKOUT</div><h2 id="basketTitle">ТВОЯ КОРЗИНА</h2><div id="basketLines"></div><div class="cart-checkout" id="basketCheckout" hidden><label for="basketDelivery" class="eyebrow">ДОСТАВКА ДЛЯ ЗАКАЗА</label><select class="cart-delivery" id="basketDelivery"><option value="STANDARD">STANDARD · 7–10 дней</option><option value="EXPRESS">EXPRESS · 3–5 дней</option><option value="ECONOMY">ECONOMY · 18–25 дней</option></select><p>Цена, наличие, размеры и стоимость доставки уточняются в Telegram. Нажми «Оформить заказ»: бот автоматически покажет всю корзину. Если связь недоступна, можно будет отправить заказ вручную.</p><button type="button" class="primary" id="basketCopy">ОФОРМИТЬ ЗАКАЗ В TELEGRAM</button></div></section></div>
+<div class="toast" id="toast" role="status"></div>
 <script>
 let products=[];
-const $=id=>document.getElementById(id);const cards=$('cards'),search=$('search'),empty=$('empty'),overlay=$('overlay'),detail=$('detail');let filter='Все',selected=null,lastFocus=null,toastTimer=null;
+const $=id=>document.getElementById(id);const cards=$('cards'),search=$('search'),empty=$('empty'),overlay=$('overlay'),detail=$('detail');let filter='Все',selected=null,lastFocus=null,toastTimer=null;const readSet=k=>{try{return new Set(JSON.parse(localStorage.getItem(k)||'[]'))}catch{return new Set()}};const favs=readSet('th4-favs'),cart=readSet('th4-cart');function store(k,v){try{localStorage.setItem(k,JSON.stringify([...v]))}catch{}}function updateSaved(){const found=products.filter(p=>favs.has(p.id)||cart.has(p.id));$('favCount').textContent=favs.size;$('cartCount').textContent=cart.size;$('saved').hidden=!found.length;$('savedItems').innerHTML=found.map(p=>'<button type="button" data-saved="'+p.id+'">'+safe(p.ruTitle)+(cart.has(p.id)?' · В подборке':'')+'</button>').join('')}
 const deliveryNames={EXPRESS:'EXPRESS (3–5 дней, дорого)',STANDARD:'STANDARD (7–10 дней, средняя стоимость)',ECONOMY:'ECONOMY (18–25 дней, экономно)'};
 function request(p){const d=$('delivery')?.value||'STANDARD';return `Здравствуйте! Хочу оформить заказ TREND HUNTER. Товар: ${p.id} — ${p.ruTitle} (${p.title}). Доставка: ${deliveryNames[d]}. Подскажите доступные размеры, наличие, полную стоимость с доставкой и условия оплаты.`}
 function botLink(p){const d=$('delivery')?.value||'STANDARD';return `https://t.me/TrendHunterShopBot?start=${p.id.replace('-','')}_${d}`}
 function updateBotLink(){if(selected)$('openTG').href=botLink(selected)}
 function safe(t){return String(t).replace(/[&<>"']/g,x=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[x]))}
-function render(){const q=search.value.trim().toLocaleLowerCase('ru');const list=products.filter(p=>(filter==='Все'||filter===p.category)&&(!q||(`${p.id} ${p.title} ${p.ruTitle} ${p.description} ${p.category}`).toLocaleLowerCase('ru').includes(q)));$('count').textContent=`ПОКАЗАНО: ${list.length} / ${products.length}`;cards.innerHTML=list.map(p=>`<article class="tile"><button type="button" class="tilephoto" data-detail="${p.id}" aria-label="Подробнее о ${safe(p.title)}"><img src="${p.img}" loading="lazy" alt="${safe(p.title)}"><span class="stamp">${p.id}</span><span class="corner">DROP 001</span></button><div class="tilebody"><div class="cat">${safe(p.category)}</div><h3>${safe(p.ruTitle)}</h3><div class="enname">${safe(p.title)}</div><div class="price">ЦЕНА ПО ЗАПРОСУ</div><div class="act"><button type="button" class="primary" data-detail="${p.id}">СМОТРЕТЬ</button><button type="button" class="secondary" data-copy="${p.id}" aria-label="Скопировать запрос ${p.id}">КОПИРОВАТЬ</button></div></div></article>`).join('');empty.hidden=list.length>0}
+function render(){const q=search.value.trim().toLocaleLowerCase('ru');const list=products.filter(p=>(filter==='Все'||filter===p.category)&&(!q||(`${p.id} ${p.title} ${p.ruTitle} ${p.description} ${p.category}`).toLocaleLowerCase('ru').includes(q)));$('count').textContent=`ПОКАЗАНО: ${list.length} / ${products.length}`;cards.innerHTML=list.map(p=>`<article class="tile"><button type="button" class="tilephoto" data-detail="${p.id}" aria-label="Подробнее о ${safe(p.title)}"><img src="${p.img}" loading="lazy" alt="${safe(p.title)}"><span class="stamp">${p.id}</span><button type="button" class="heart" data-fav="${p.id}" aria-label="В избранное" aria-pressed="${favs.has(p.id)}">${favs.has(p.id)?"♥":"♡"}</button><span class="corner">DROP 001</span></button><div class="tilebody"><div class="cat">${safe(p.category)}</div><h3>${safe(p.ruTitle)}</h3><div class="enname">${safe(p.title)}</div><div class="price">ЦЕНА ПО ЗАПРОСУ</div><div class="act"><button type="button" class="primary" data-detail="${p.id}">СМОТРЕТЬ</button><button type="button" class="secondary" data-cart="${p.id}">${cart.has(p.id)?"✓ ДОБАВЛЕНО":"+ ПОДБОРКА"}</button></div></div></article>`).join('');empty.hidden=list.length>0;updateSaved()}
 function showDetail(id){selected=products.find(p=>p.id===id);if(!selected)return;lastFocus=document.activeElement;$('detailImg').src=selected.img;$('detailImg').alt=selected.title;$('detailCode').textContent=`${selected.id} / DROP 001`;$('detailTitle').textContent=selected.ruTitle; $('detailEnglish').textContent=selected.title;$('detailCategory').textContent=selected.category;$('detailDesc').textContent=selected.description;$('delivery').value='STANDARD';updateBotLink();overlay.classList.add('open');document.body.classList.add('lock');detail.focus();history.replaceState(null,'',location.pathname+location.search+'#'+selected.id)}
 function hideDetail(){overlay.classList.remove('open');document.body.classList.remove('lock');selected=null;history.replaceState(null,'',location.pathname+location.search+'#catalog');if(lastFocus?.isConnected)lastFocus.focus()}
 function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2700)}
 async function copy(p){const msg=request(p);try{if(!navigator.clipboard?.writeText)throw Error('Clipboard unavailable');await navigator.clipboard.writeText(msg);toast('Запрос скопирован — вставь его в чат')}catch(e){const ta=document.createElement('textarea');ta.value=msg;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();if(ok)toast('Запрос скопирован — вставь в чат');else window.prompt('Скопируй сообщение для Telegram:',msg)}}
-document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});render()}));search.addEventListener('input',render);cards.addEventListener('click',e=>{const t=e.target.closest('[data-detail],[data-copy]');if(!t)return;if(t.dataset.detail)showDetail(t.dataset.detail);else{const p=products.find(p=>p.id===t.dataset.copy);if(p)copy(p)}});$('copyRequest').addEventListener('click',()=>selected&&copy(selected));$('delivery').addEventListener('change',updateBotLink);$('close').addEventListener('click',hideDetail);overlay.addEventListener('click',e=>{if(e.target===overlay)hideDetail()});document.addEventListener('keydown',e=>{if(!overlay.classList.contains('open'))return;if(e.key==='Escape')hideDetail();if(e.key==='Tab'){const f=[...detail.querySelectorAll('button,a[href]')].filter(x=>!x.disabled);const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}});async function loadProducts(){
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});render()}));search.addEventListener('input',render);cards.addEventListener('click',e=>{const t=e.target.closest('[data-fav],[data-cart],[data-detail],[data-copy]');if(!t)return;if(t.dataset.fav){const id=t.dataset.fav;favs.has(id)?favs.delete(id):favs.add(id);store('th4-favs',favs);render()}else if(t.dataset.cart){const id=t.dataset.cart;cart.has(id)?cart.delete(id):cart.add(id);store('th4-cart',cart);render()}else if(t.dataset.detail)showDetail(t.dataset.detail);else{const p=products.find(p=>p.id===t.dataset.copy);if(p)copy(p)}});$('savedItems').addEventListener('click',e=>{const t=e.target.closest('[data-saved]');if(t)showDetail(t.dataset.saved)});$('clearCart').addEventListener('click',()=>{cart.clear();store('th4-cart',cart);render()});$('copyRequest').addEventListener('click',()=>selected&&copy(selected));$('delivery').addEventListener('change',updateBotLink);$('close').addEventListener('click',hideDetail);overlay.addEventListener('click',e=>{if(e.target===overlay)hideDetail()});
+/* iPhone edge-swipe to close a product without interrupting vertical scrolling */
+let detailSwipeStart=null;
+overlay.addEventListener('touchstart',e=>{
+ if(!overlay.classList.contains('open')||!e.touches||e.touches.length!==1||!guide.hidden)return;
+ const t=e.touches[0];
+ const left=detail.getBoundingClientRect().left;
+ if(t.clientX<=Math.max(42,left+36)){
+  detailSwipeStart={x:t.clientX,y:t.clientY,time:Date.now()};
+ }else detailSwipeStart=null;
+},{passive:true});
+overlay.addEventListener('touchend',e=>{
+ if(!detailSwipeStart||!overlay.classList.contains('open'))return;
+ const start=detailSwipeStart;detailSwipeStart=null;
+ const t=e.changedTouches&&e.changedTouches[0];if(!t)return;
+ const dx=t.clientX-start.x,dy=Math.abs(t.clientY-start.y);
+ if(dx>=90&&dy<65&&dx>dy*1.7&&Date.now()-start.time<900)hideDetail();
+},{passive:true});
+overlay.addEventListener('touchcancel',()=>{detailSwipeStart=null},{passive:true});
+document.addEventListener('keydown',e=>{if(!overlay.classList.contains('open'))return;if(e.key==='Escape')hideDetail();if(e.key==='Tab'){const f=[...detail.querySelectorAll('button,a[href]')].filter(x=>!x.disabled);const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}});async function loadProducts(){
   try {
     const response=await fetch('./products.json',{cache:'no-store'});
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
@@ -57,4 +451,93 @@ document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click'
   }
 }
 loadProducts();
-</script></body></html>
+</script>
+<script>
+/* TREND HUNTER 4.1 cart: local browser storage, no server-side checkout yet */
+(()=>{
+const key='th41-basket';const sizeKey='th52-sizes';let quantities={};let sizes={};
+try{const saved=JSON.parse(localStorage.getItem(sizeKey)||'{}');if(saved&&typeof saved==='object'&&!Array.isArray(saved))sizes=saved}catch{}
+const sizeOptions=p=>/джинс|брюк|denim|jeans/i.test((p.ruTitle||'')+' '+(p.category||''))?['Уточнить','W26','W27','W28','W29','W30','W31','W32','W33','W34','W36','W38','W40']:['Уточнить','XS','S','M','L','XL','XXL'];
+const normalizeSizes=()=>{for(const p of products){const n=Math.max(0,Math.min(99,Number(quantities[p.id])||0));const allowed=sizeOptions(p);const arr=Array.isArray(sizes[p.id])?sizes[p.id]:[];sizes[p.id]=Array.from({length:n},(_,i)=>allowed.includes(arr[i])?arr[i]:'Уточнить')}};
+const sizeLabel=p=>{const count={};for(const v of (sizes[p.id]||[]))count[v]=(count[v]||0)+1;return Object.entries(count).map(([v,n])=>(v==='Уточнить'?'уточнить':v)+' × '+n).join(', ')};
+const orderName=p=>p.ruTitle+' [Размеры: '+sizeLabel(p)+']';
+try{const saved=JSON.parse(localStorage.getItem(key)||'{}');if(saved&&typeof saved==='object'&&!Array.isArray(saved))quantities=saved}catch{}
+for(const id of cart)if(!quantities[id])quantities[id]=1;
+const shade=document.getElementById('basketShade'),lines=document.getElementById('basketLines');
+const detailSizeBox=document.createElement('div');
+detailSizeBox.className='detail-size-box';
+detailSizeBox.innerHTML='<label for="detailSizeSelect">ВЫБЕРИ РАЗМЕР</label><select id="detailSizeSelect" aria-label="Размер товара"></select><p>Размер и наличие подтвердим перед оплатой.</p>';
+document.querySelector('.detailcontent .actions').before(detailSizeBox);
+const detailSizeSelect=detailSizeBox.querySelector('select');
+const guideButton=document.createElement('button');
+guideButton.type='button';guideButton.className='size-guide-trigger';guideButton.textContent='→ КАК ПОДОБРАТЬ РАЗМЕР?';
+detailSizeBox.append(guideButton);
+const guide=document.createElement('div');
+guide.className='size-guide-overlay';guide.id='sizeGuideOverlay';guide.hidden=true;
+guide.innerHTML='<div class="size-guide-dialog" role="dialog" aria-modal="true" aria-labelledby="sizeGuideHeading"><button type="button" class="size-guide-close" aria-label="Закрыть подсказку">×</button><div class="size-guide-kicker">TREND HUNTER / SIZE GUIDE</div><h3 id="sizeGuideHeading">КАК ПОДОБРАТЬ РАЗМЕР</h3><div id="sizeGuideText"></div><p class="size-guide-note">Это рекомендации по измерениям, не размерная сетка конкретного бренда. Точные замеры и наличие подтвердим у поставщика перед оплатой.</p><button type="button" class="size-guide-done">ПОНЯТНО</button></div>';
+document.body.append(guide);
+const guideText=guide.querySelector('#sizeGuideText');
+const guideClose=()=>{guide.hidden=true;guideButton.focus()};
+guideButton.addEventListener('click',()=>{if(!selected)return;const denim=/джинс|брюк|denim|jeans/i.test((selected.ruTitle||'')+' '+(selected.category||''));guideText.innerHTML=denim?'<p><b>1. Талия:</b> измерь обхват в месте, где носишь джинсы.</p><p><b>2. Бёдра:</b> измерь самую широкую часть.</p><p><b>3. Длина:</b> измерь внутренний шов от паха до низа штанины.</p><p><b>Размер W:</b> обычно обозначает обхват талии в дюймах, но посадка и фактические замеры зависят от модели.</p>':'<p><b>1. Грудь:</b> измерь обхват по самой широкой части.</p><p><b>2. Длина:</b> измерь от верхней точки плеча до нижнего края вещи.</p><p><b>3. Рукав:</b> измерь от плечевого шва до манжеты.</p><p><b>Посадка:</b> для свободного силуэта сравни замеры с вещью, которая уже хорошо сидит.</p>';guide.hidden=false;guide.querySelector('.size-guide-close').focus()});
+guide.querySelector('.size-guide-close').addEventListener('click',guideClose);
+guide.querySelector('.size-guide-done').addEventListener('click',guideClose);
+guide.addEventListener('click',e=>{if(e.target===guide)guideClose()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!guide.hidden){e.stopImmediatePropagation();guideClose()}},true);
+
+function refreshDetailSizes(){if(!selected)return;detailSizeSelect.innerHTML=sizeOptions(selected).map(v=>'<option value="'+v+'">'+(v==='Уточнить'?'Уточнить размер':v)+'</option>').join('')}
+const detailWatch=new MutationObserver(()=>{if(overlay.classList.contains('open'))refreshDetailSizes()});
+detailWatch.observe(overlay,{attributes:true,attributeFilter:['class']});
+
+const persist=()=>{normalizeSizes();try{localStorage.setItem(key,JSON.stringify(quantities));localStorage.setItem(sizeKey,JSON.stringify(sizes))}catch{}};
+function sync(){cart.clear();for(const [id,n] of Object.entries(quantities)){if(n>0&&products.some(p=>p.id===id))cart.add(id)}store('th4-cart',cart);persist();render();draw()}
+function add(id,size='Уточнить'){const p=products.find(p=>p.id===id);if(!p)return;normalizeSizes();if((quantities[id]||0)>=99)return;quantities[id]=(quantities[id]||0)+1;sizes[id]=[...(sizes[id]||[]),sizeOptions(p).includes(size)?size:'Уточнить'];sync();toast('Товар добавлен в корзину')}
+function draw(){
+normalizeSizes();
+const items=products.filter(p=>quantities[p.id]>0);const total=items.reduce((n,p)=>n+quantities[p.id],0);
+document.getElementById('basketBadge').textContent=total;document.getElementById('basketCheckout').hidden=!total;
+lines.innerHTML=items.length?items.map(p=>'<div class="cart-line"><img src="'+p.img+'" alt=""><div><strong>'+safe(p.ruTitle)+'</strong><div class="cart-note">'+p.id+' · Цена по запросу</div><div class="cart-sizes"><div class="cart-size-label">РАЗМЕРЫ · ПО КАЖДОЙ ЕДИНИЦЕ</div>'+(sizes[p.id]||[]).map((v,i)=>'<label class="cart-size-row"><span>№ '+(i+1)+'</span><select aria-label="Размер товара '+p.id+' номер '+(i+1)+'" data-size-id="'+p.id+'" data-size-index="'+i+'">'+sizeOptions(p).map(opt=>'<option value="'+opt+'"'+(opt===v?' selected':'')+'>'+(opt==='Уточнить'?'Уточнить размер':opt)+'</option>').join('')+'</select></label>').join('')+'</div><div class="cart-controls"><button type="button" data-minus="'+p.id+'" aria-label="Уменьшить">−</button><b>'+quantities[p.id]+' шт.</b><button type="button" data-plus="'+p.id+'" aria-label="Увеличить">+</button><button type="button" class="remove" data-remove="'+p.id+'">Удалить</button></div></div></div>').join(''):'<p class="cart-empty">Корзина пока пуста. Добавь понравившиеся вещи из каталога.</p>';
+}
+function open(){draw();shade.classList.add('open');document.body.classList.add('lock');document.getElementById('basketClose').focus()}
+function close(){shade.classList.remove('open');if(!overlay.classList.contains('open'))document.body.classList.remove('lock')}
+document.getElementById('navCart').addEventListener('click',open);
+document.getElementById('basketClose').addEventListener('click',close);
+shade.addEventListener('click',e=>{if(e.target===shade)close()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&shade.classList.contains('open'))close()});
+document.getElementById('navFavorites').addEventListener('click',()=>{document.getElementById('saved').hidden=false;document.getElementById('saved').scrollIntoView({behavior:'smooth'});toast('Избранное и подборка')});
+cards.addEventListener('click',e=>{const b=e.target.closest('[data-cart]');if(b){e.stopImmediatePropagation();add(b.dataset.cart)}},true);
+lines.addEventListener('change',e=>{const el=e.target.closest('[data-size-id]');if(!el)return;const p=products.find(p=>p.id===el.dataset.sizeId);const i=Number(el.dataset.sizeIndex);if(!p||!Number.isInteger(i)||i<0||i>=quantities[p.id]||!sizeOptions(p).includes(el.value))return;normalizeSizes();sizes[p.id][i]=el.value;persist()});
+lines.addEventListener('click',e=>{const b=e.target.closest('[data-plus],[data-minus],[data-remove]');if(!b)return;const id=b.dataset.plus||b.dataset.minus||b.dataset.remove;if(b.hasAttribute('data-plus'))quantities[id]=Math.min(99,(quantities[id]||0)+1);else if(b.hasAttribute('data-minus'))quantities[id]=Math.max(0,(quantities[id]||0)-1);else quantities[id]=0;sync()});
+const addDetail=document.createElement('button');addDetail.type='button';addDetail.className='secondary cart-add';addDetail.textContent='+ ДОБАВИТЬ В КОРЗИНУ';document.querySelector('.detailcontent .actions').appendChild(addDetail);
+addDetail.addEventListener('click',()=>{if(selected)add(selected.id,detailSizeSelect.value)});
+document.getElementById('basketCopy').addEventListener('click',async()=>{
+const items=products.filter(p=>quantities[p.id]>0);if(!items.length)return;
+const d=document.getElementById('basketDelivery').value;
+const button=document.getElementById('basketCopy');
+if(button.disabled)return;
+button.disabled=true;button.textContent='СОХРАНЯЕМ ЗАКАЗ...';
+try{
+const response=await fetch('https://trend-hunter-orders.sopranonickolas.workers.dev/api/cart',{
+method:'POST',headers:{'Content-Type':'application/json'},
+body:JSON.stringify({items:items.map(p=>({id:p.id,name:orderName(p),quantity:quantities[p.id]})),delivery:d})
+});
+if(!response.ok)throw new Error('Cart API HTTP '+response.status);
+const result=await response.json();
+if(!/^[a-f0-9]{32}$/.test(result.code||''))throw new Error('Invalid order code');
+window.location.assign('https://t.me/TrendHunterShopBot?start=cart_'+result.code);
+}catch(error){
+console.error('TREND HUNTER checkout:',error);
+const message='TREND HUNTER — ОБЩИЙ ЗАКАЗ\n'+items.map((p,i)=>(i+1)+'. '+p.id+' — '+orderName(p)+' × '+quantities[p.id]+' шт. (размер уточнить)').join('\n')+'\nДоставка: '+deliveryNames[d]+'\nПожалуйста, подтвердите наличие, размеры и итоговую цену с доставкой.';
+let copied=false;
+try{await navigator.clipboard.writeText(message);copied=true}catch{
+const ta=document.createElement('textarea');ta.value=message;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{copied=document.execCommand('copy')}catch{}ta.remove();
+}
+if(copied){toast('Автоматическое оформление недоступно. Заказ скопирован — вставь его боту.');window.location.assign('https://t.me/TrendHunterShopBot');}
+else{window.prompt('Не удалось открыть заказ автоматически. Скопируй заявку и отправь боту:',message)}
+}finally{button.disabled=false;button.textContent='ОФОРМИТЬ ЗАКАЗ В TELEGRAM'}
+});
+const observer=new MutationObserver(()=>{const n=products.filter(p=>quantities[p.id]>0).reduce((n,p)=>n+quantities[p.id],0);document.getElementById('basketBadge').textContent=n});
+observer.observe(document.getElementById('cartCount'),{childList:true});
+draw();
+})();
+</script>
+</body></html>
