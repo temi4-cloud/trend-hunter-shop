@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0a0a0b"><meta name="description" content="TREND HUNTER — независимая подборка streetwear. Цена и доставка по запросу в Telegram."><title>TREND HUNTER 5.5 / TASHKENT DELIVERY</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0a0a0b"><meta name="description" content="TREND HUNTER — независимая подборка streetwear. Цена и доставка по запросу в Telegram."><title>TREND HUNTER 5.6 / MOBILE REFINEMENT</title>
 <style>
 :root{--bg:#0a0a0b;--panel:#141516;--panel2:#1b1d1e;--line:#313336;--muted:#adb0b2;--fg:#f4f3ed;--lime:#FFD90F;--serif:Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--fg);margin:0;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}body.lock{overflow:hidden}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--lime);outline-offset:3px}img{max-width:100%} .wrap{max-width:1280px;margin:auto;padding-left:24px;padding-right:24px}
@@ -330,6 +330,30 @@ body{background:#0d0d0e}
 .th55-cta{display:inline-flex;align-items:center;gap:35px;background:#e6c54d;color:#111;padding:17px 22px;font-weight:900;letter-spacing:1px;margin-top:24px;font-size:12px}
 .th55-cta span{font-size:22px;font-weight:400}
 @media(max-width:760px){.th55-guide{padding-top:52px;padding-bottom:60px}.th55-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.th55-steps>div{padding:16px 13px}.th55-steps strong{font-size:15px}.th55-steps p{font-size:12px}.th55-shipping{padding:18px 13px}.th55-shipping-grid{grid-template-columns:1fr;gap:8px}.th55-shipping-grid>div{padding:14px}.th55-shipping-grid span{margin-bottom:6px}.th55-shipping-grid strong{font-size:23px}.th55-city{font-size:10px;line-height:1.5}}
+
+
+/* TREND HUNTER 5.6 — mobile viewport and fixed navigation refinement */
+html{scroll-padding-top:90px}
+@media(max-width:700px){
+ body{padding-bottom:calc(112px + env(safe-area-inset-bottom,0px))}
+ .cart-nav{min-height:70px;align-items:center;gap:2px;padding:8px 8px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(13,13,15,.97);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 -12px 30px #0007}
+ .cart-nav button,.cart-nav a{min-width:0;flex:1;min-height:51px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:11px;line-height:1.2;text-align:center;white-space:normal}
+ .cart-nav .nav-icon{font-size:22px;line-height:1}
+ #catalog,#saved,#delivery-info,#top{scroll-margin-top:84px}
+ .th55-guide{padding-bottom:calc(125px + env(safe-area-inset-bottom,0px))}
+ .th55-steps{gap:9px}
+ .th55-steps>div{padding:16px 12px}
+ .th55-steps span{font-size:10px;margin-bottom:12px}
+ .th55-steps p{line-height:1.5;margin-bottom:0}
+ .th55-shipping-grid>div{display:grid;grid-template-columns:1fr auto;column-gap:8px;align-items:center}
+ .th55-shipping-grid span{grid-column:1/-1}
+ .th55-shipping-grid small{text-align:right}
+ .th55-cta{min-height:49px}
+ .toast{bottom:calc(96px + env(safe-area-inset-bottom,0px));max-width:calc(100vw - 30px);white-space:normal;text-align:center}
+ .overlay{padding:12px 12px calc(95px + env(safe-area-inset-bottom,0px))}
+ .detail{max-height:calc(100dvh - 125px)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
 </style></head>
 <body><header class="top"><div class="wrap topin"><a href="#top" class="brand" aria-label="TREND HUNTER, главная">TREND <em>HUNTER</em></a><nav class="toplinks"><a href="#catalog">Каталог</a><a class="saved-nav" href="#saved">♡ <span id="favCount">0</span> · Подборка <span id="cartCount">0</span></a><a class="tgb" href="https://t.me/TrendHunterShopBot" target="_blank" rel="noopener noreferrer">НАПИСАТЬ</a></nav></div></header>
