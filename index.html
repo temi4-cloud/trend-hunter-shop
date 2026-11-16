@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0a0a0b"><meta name="description" content="TREND HUNTER — независимая подборка streetwear. Цена и доставка по запросу в Telegram."><title>TREND HUNTER 5.6 / MOBILE REFINEMENT</title>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#0a0a0b"><meta name="description" content="TREND HUNTER — независимая подборка streetwear. Цена и доставка по запросу в Telegram."><title>TREND HUNTER 5.7 / EDGE SWIPE</title>
 <style>
 :root{--bg:#0a0a0b;--panel:#141516;--panel2:#1b1d1e;--line:#313336;--muted:#adb0b2;--fg:#f4f3ed;--lime:#FFD90F;--serif:Arial,sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--fg);margin:0;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}body.lock{overflow:hidden}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--lime);outline-offset:3px}img{max-width:100%} .wrap{max-width:1280px;margin:auto;padding-left:24px;padding-right:24px}
@@ -379,7 +379,26 @@ function showDetail(id){selected=products.find(p=>p.id===id);if(!selected)return
 function hideDetail(){overlay.classList.remove('open');document.body.classList.remove('lock');selected=null;history.replaceState(null,'',location.pathname+location.search+'#catalog');if(lastFocus?.isConnected)lastFocus.focus()}
 function toast(msg){const el=$('toast');el.textContent=msg;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),2700)}
 async function copy(p){const msg=request(p);try{if(!navigator.clipboard?.writeText)throw Error('Clipboard unavailable');await navigator.clipboard.writeText(msg);toast('Запрос скопирован — вставь его в чат')}catch(e){const ta=document.createElement('textarea');ta.value=msg;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}ta.remove();if(ok)toast('Запрос скопирован — вставь в чат');else window.prompt('Скопируй сообщение для Telegram:',msg)}}
-document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});render()}));search.addEventListener('input',render);cards.addEventListener('click',e=>{const t=e.target.closest('[data-fav],[data-cart],[data-detail],[data-copy]');if(!t)return;if(t.dataset.fav){const id=t.dataset.fav;favs.has(id)?favs.delete(id):favs.add(id);store('th4-favs',favs);render()}else if(t.dataset.cart){const id=t.dataset.cart;cart.has(id)?cart.delete(id):cart.add(id);store('th4-cart',cart);render()}else if(t.dataset.detail)showDetail(t.dataset.detail);else{const p=products.find(p=>p.id===t.dataset.copy);if(p)copy(p)}});$('savedItems').addEventListener('click',e=>{const t=e.target.closest('[data-saved]');if(t)showDetail(t.dataset.saved)});$('clearCart').addEventListener('click',()=>{cart.clear();store('th4-cart',cart);render()});$('copyRequest').addEventListener('click',()=>selected&&copy(selected));$('delivery').addEventListener('change',updateBotLink);$('close').addEventListener('click',hideDetail);overlay.addEventListener('click',e=>{if(e.target===overlay)hideDetail()});document.addEventListener('keydown',e=>{if(!overlay.classList.contains('open'))return;if(e.key==='Escape')hideDetail();if(e.key==='Tab'){const f=[...detail.querySelectorAll('button,a[href]')].filter(x=>!x.disabled);const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}});async function loadProducts(){
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});render()}));search.addEventListener('input',render);cards.addEventListener('click',e=>{const t=e.target.closest('[data-fav],[data-cart],[data-detail],[data-copy]');if(!t)return;if(t.dataset.fav){const id=t.dataset.fav;favs.has(id)?favs.delete(id):favs.add(id);store('th4-favs',favs);render()}else if(t.dataset.cart){const id=t.dataset.cart;cart.has(id)?cart.delete(id):cart.add(id);store('th4-cart',cart);render()}else if(t.dataset.detail)showDetail(t.dataset.detail);else{const p=products.find(p=>p.id===t.dataset.copy);if(p)copy(p)}});$('savedItems').addEventListener('click',e=>{const t=e.target.closest('[data-saved]');if(t)showDetail(t.dataset.saved)});$('clearCart').addEventListener('click',()=>{cart.clear();store('th4-cart',cart);render()});$('copyRequest').addEventListener('click',()=>selected&&copy(selected));$('delivery').addEventListener('change',updateBotLink);$('close').addEventListener('click',hideDetail);overlay.addEventListener('click',e=>{if(e.target===overlay)hideDetail()});
+/* iPhone edge-swipe to close a product without interrupting vertical scrolling */
+let detailSwipeStart=null;
+overlay.addEventListener('touchstart',e=>{
+ if(!overlay.classList.contains('open')||!e.touches||e.touches.length!==1||!guide.hidden)return;
+ const t=e.touches[0];
+ const left=detail.getBoundingClientRect().left;
+ if(t.clientX<=Math.max(42,left+36)){
+  detailSwipeStart={x:t.clientX,y:t.clientY,time:Date.now()};
+ }else detailSwipeStart=null;
+},{passive:true});
+overlay.addEventListener('touchend',e=>{
+ if(!detailSwipeStart||!overlay.classList.contains('open'))return;
+ const start=detailSwipeStart;detailSwipeStart=null;
+ const t=e.changedTouches&&e.changedTouches[0];if(!t)return;
+ const dx=t.clientX-start.x,dy=Math.abs(t.clientY-start.y);
+ if(dx>=90&&dy<65&&dx>dy*1.7&&Date.now()-start.time<900)hideDetail();
+},{passive:true});
+overlay.addEventListener('touchcancel',()=>{detailSwipeStart=null},{passive:true});
+document.addEventListener('keydown',e=>{if(!overlay.classList.contains('open'))return;if(e.key==='Escape')hideDetail();if(e.key==='Tab'){const f=[...detail.querySelectorAll('button,a[href]')].filter(x=>!x.disabled);const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0){e.preventDefault();f[f.length-1].focus()}else if(!e.shiftKey&&i===f.length-1){e.preventDefault();f[0].focus()}}});async function loadProducts(){
   try {
     const response=await fetch('./products.json',{cache:'no-store'});
     if(!response.ok)throw new Error(`HTTP ${response.status}`);
